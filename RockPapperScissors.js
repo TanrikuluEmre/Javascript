@@ -3,8 +3,8 @@ function playinggame()
 {
     
     if(playgame)
-    {
-        let playerChoice = prompt("Okey Rock , Papper or Scissors ?");
+    { 
+        let playerChoice = prompt("Allright! Rock, Papper or Scissors ?");
         playerChoice = playerChoice.trim().toLocaleLowerCase();
     
         if(playerChoice=="rock"||playerChoice=="papper"||playerChoice== "scissors")
@@ -16,35 +16,22 @@ function playinggame()
                 case 1: ComputerChoice="papper";break;
                 case 2: ComputerChoice="scissors";break;
             }
-            if(playerChoice==ComputerChoice)
-            {
-                alert("Equal")
-            }else if(playerChoice=="rock" && ComputerChoice=="papper")
-            {
-                alert("You Lost Computer Choice is "+ComputerChoice)
-            }else if(playerChoice=="rock" && ComputerChoice=="scissors")
-            {
-                alert("You Won Computer Choice is "+ComputerChoice)
-            }else if(playerChoice=="papper" && ComputerChoice=="rock")
-            {
-                alert("You Won Computer Choice is "+ComputerChoice)
-            }else if(playerChoice=="papper" && ComputerChoice=="scissors")
-            {
-                alert("You Lost Computer Choice is "+ComputerChoice)
-            }else if(playerChoice=="scissors" && ComputerChoice=="papper")
-            {
-                alert("You Won Computer Choice is "+ComputerChoice)
-            }else if(playerChoice=="scissors" && ComputerChoice=="rock")
-            {
-                alert("You Lost Computer Choice is "+ComputerChoice)
-            }
+            ComputerChoice == playerChoice ? alert("Equal, Nobody Win")
+            : ComputerChoice == "rock" && playerChoice == "papper" 
+            ? alert("Congratulations You Won\n"+"You : "+playerChoice+"\nComputer : "+ComputerChoice)
+            : ComputerChoice == "papper" && playerChoice == "scissors" 
+            ? alert("Congratulations You Won\n"+"You : "+playerChoice+"\nComputer : "+ComputerChoice)
+            : ComputerChoice == "scissors" && playerChoice == "rock" 
+            ? alert("Congratulations You Won\n"+"You : "+playerChoice+"\nComputer : "+ComputerChoice)
+            : alert("I'm sorry u LOST\n"+"You : "+playerChoice+"\nComputer : "+ComputerChoice);
+
         }else
         {
             alert("Try to use true words pls.");
             playinggame();
         }
         
-        }   else
+        }  else
     {
         alert("Okey maybe next time :(");
     }
